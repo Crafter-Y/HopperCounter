@@ -1,0 +1,5 @@
+name: HopperCounter
+version: '${version}'
+main: de.craftery.hoppercounter.HopperCounter
+api-version: '1.20'
+authors: ["Crafter_Y"]
