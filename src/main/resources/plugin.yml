@@ -2,7 +2,7 @@ name: HopperCounter
 version: '${version}'
 main: de.craftery.hoppercounter.HopperCounter
 api-version: '1.20'
-authors: ["Crafter_Y"]
+authors: ["Crafter_Y", "Traumi_Schlumpf"]
 depend: [HolographicDisplays]
 
 commands:
