@@ -3,3 +3,28 @@ version: '${version}'
 main: de.craftery.hoppercounter.HopperCounter
 api-version: '1.20'
 authors: ["Crafter_Y"]
+depend: [HolographicDisplays]
+
+commands:
+  sethopper:
+    description: Set the hopper to count items
+    usage: /sethopper <Item>
+    permission: hoppercounter.sethopper
+    aliases: [sh]
+  setdisplay:
+    description: Set the display
+    usage: /setdisplay <maxAmount>
+    permission: hoppercounter.setdisplay
+    aliases: [sd]
+
+permissions:
+  hoppercounter.*:
+    description: Permission to use all commands
+    default: op
+    children:
+      hoppercounter.sethopper:
+        description: Permission to set the hopper to count items
+        default: op
+      hoppercounter.setdisplay:
+        description: Permission to set the display
+        default: op

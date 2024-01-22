@@ -1,9 +1,16 @@
 plugins {
     id 'java'
+    id("xyz.jpenilla.run-paper") version "2.1.0"
 }
 
 group = 'de.craftery'
 version = '1.0'
+
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
 
 repositories {
     mavenCentral()
@@ -15,10 +22,21 @@ repositories {
         name = "sonatype"
         url = "https://oss.sonatype.org/content/groups/public/"
     }
+    maven {
+        url "https://repo.codemc.io/repository/maven-public/"
+    }
 }
 
 dependencies {
     compileOnly "io.papermc.paper:paper-api:1.20.1-R0.1-SNAPSHOT"
+    compileOnly 'me.filoghost.holographicdisplays:holographicdisplays-api:3.0.0'
+}
+
+tasks {
+    runServer {
+        dependsOn("build")
+        minecraftVersion("1.20.1")
+    }
 }
 
 def targetJavaVersion = 17
